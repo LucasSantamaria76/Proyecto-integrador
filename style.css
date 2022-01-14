@@ -1,0 +1,239 @@
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+body {
+ width: 100%;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+}
+
+.navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(179, 206, 214);
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: -3px 10px 8px -2px rgba(68, 60, 60, 0.75);
+}
+
+#btn-menu {
+  display: none;
+}
+.barraMenu {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#burger {
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000;
+  font-size: 1.5rem;
+  width: 100%;
+  border-radius: 5px;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+#btn-menu:checked ~ .menu {
+  opacity: 95%;
+}
+
+svg {
+  margin-right: 20px;
+}
+
+svg:hover {
+  fill: rgb(214, 33, 33);
+}
+
+a {
+  text-decoration: none;
+  margin: 10px auto;
+}
+
+.menu a:hover {
+  color: rgb(214, 33, 33);
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  padding-top:60px ;
+  background-image: url(./img/frutas-verduras.webp);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'The Nautigal', cursive;
+  font-weight: 700;
+  font-size: 8rem;
+  color: rgb(245, 100, 100);
+  padding: 30px;
+  margin: 20px auto;
+  text-shadow:4px 4px 4px #000000;
+}
+
+.box-text{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.box-text h3{
+  font-family: 'The Nautigal', cursive;
+  color:#fff;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+#productos {
+  width: 100%;
+  height: calc(100vh - 120px);
+/*   background-image: url(./img/fruta_verdura2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+ */}
+
+.contenedor-grid {
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items:center;
+  overflow: auto;
+}
+
+.card {
+ width: 300px;
+ height: 320px;
+ margin: 0 auto;
+ background-color:#fff;
+ cursor: pointer;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 12px 10px -10px;
+}
+
+.contenido {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
+
+/* FOOTER */
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 60px;
+  background-color:rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_social {
+  width:10%;
+  display: flex;
+  justify-content:center;
+}
+
+i {
+  color: white;
+}
+
+
+@media (min-width: 768px) {
+  #burger {
+    display: none;
+  }
+
+  .barraMenu {
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .menu {
+    position: static;
+    width: 70%;
+    background-color: transparent;
+    opacity: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  h1 {
+  font-size: 10rem;
+}
+
+.box-text{
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background-color: #ffffff70;
+}
+
+.box-text h3{
+  color: rgb(65, 54, 54);
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+}
