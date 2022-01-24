@@ -12,7 +12,6 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
  width: 100%;
  min-height: 100vh;
@@ -20,13 +19,11 @@ body {
  flex-direction: column;
 }
 
+
 .navbar {
-  position:fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 60px;
-  background-color: rgb(179, 206, 214);
+  background-color: rgb(195, 243, 211);
   border-bottom: 2px solid #000;
   display: flex;
   justify-content: space-between;
@@ -36,6 +33,8 @@ body {
 #btn-menu {
   display: none;
 }
+
+
 .barraMenu {
   width: 60%;
   display: flex;
@@ -43,7 +42,14 @@ body {
   align-items: center;
 }
 
-#burger {
+.menuIcons {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* #burger {
   cursor: pointer;
 }
 
@@ -62,10 +68,10 @@ body {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in;
-}
+} */
 
 #btn-menu:checked ~ .menu {
-  opacity: 95%;
+  opacity: 97%;
 }
 
 svg {
@@ -79,6 +85,18 @@ svg:hover {
 a {
   text-decoration: none;
   margin: 10px auto;
+}
+
+#iconoUser {
+  width:40px;
+  height:40px;
+  background-color:rgba(60, 60, 134, 0.561);
+  border-radius: 50%;
+  color:white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 40px;
 }
 
 .menu a:hover {
@@ -97,14 +115,25 @@ a {
   align-items: center;
 }
 
-h1 {
+h1, .logo {
   font-family: 'The Nautigal', cursive;
   font-weight: 700;
+  text-shadow:4px 4px 4px #000000;
+}
+
+h1 {
+  color: rgb(148, 44, 44);
   font-size: 8rem;
-  color: rgb(245, 100, 100);
   padding: 30px;
   margin: 20px auto;
-  text-shadow:4px 4px 4px #000000;
+}
+
+.logo {
+  width:250px;
+  height:50px;
+  color:#fff;
+  font-size: 3rem;
+  margin-left: 5px;
 }
 
 .box-text{
@@ -123,54 +152,71 @@ h1 {
 
 #productos {
   width: 100%;
-  height: calc(100vh - 120px);
-/*   background-image: url(./img/fruta_verdura2.jpg);
+  height: 62.5vh;
+  background-image: url(./img/fruta_verdura2.jpg);
   background-repeat: no-repeat;
   background-size: cover;  
- */}
-
-.contenedor-grid {
-  width: 100%;
-  height: 100%;
-  margin-top: 80px;
-  margin-bottom: 20px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content:center;
-  align-items:center;
-  overflow: auto;
-}
-
-.card {
- width: 300px;
- height: 320px;
- margin: 6px;
- background-color:#fff;
- cursor: pointer;
- box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- overflow: hidden;
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- align-items: center;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 12px 10px -10px;
-}
-
-.contenido {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
+#select {
+  width: 50%;
+  height: 50px;
+  font-size: 1.5rem;
+  margin-top:10px;
+  background-color: rgba(128, 134, 115, 0.918);
+  color: #fff;
+}
+
+ .grid-fluid {
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 1rem auto;
+  max-width: 95%;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  overflow: auto;
+}
+
+.product-card {
+  background-color: white;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.product-card:hover {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.product-card img {
+  margin: 0;
+  width: 100%;
+  height: 60%;
+  object-fit: contain;
+}
+.product-card .card-info {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.product-card .card-info .btn {
+  width: 150px;
+  height: 30px;
+  background-color: transparent;
+  border: 0.5px solid #6be4d4;
+  transition: background-color 0.2s ease-in-out;
+}
+.product-card .card-info .btn:hover {
+  background-color: #bfcecb;
+  border: 0.5px solid #000;
+}
 
 
 
@@ -180,18 +226,35 @@ h1 {
 footer {
   margin-top: auto;
   width: 100%;
-  height: 60px;
+  height: 30vh;
   background-color:rgb(0, 0, 0);
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+footer a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  /* background-color: rgb(40, 77, 82); */
+}
+
+.footer-text {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
 
 .footer_social {
   width:10%;
   display: flex;
   justify-content:center;
+  
 }
 
 i {
@@ -208,8 +271,13 @@ i {
     width: 50%;
     justify-content: space-between;
   }
+.navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+}
 
-  .menu {
+.menu {
     position: static;
     width: 70%;
     background-color: transparent;
@@ -225,6 +293,16 @@ i {
   font-size: 10rem;
 }
 
+#select{
+ margin-top: 40px;
+}
+
+#productos {
+  width: 100%;
+  height: calc(100vh - 100px);
+  margin-top: 40px;
+}
+
 .box-text{
   border: 1px solid #fff;
   border-radius: 15px;
@@ -235,6 +313,22 @@ i {
   color: rgb(65, 54, 54);
   font-size: 3rem;
   font-weight: 400;
+}
+
+footer {
+  height: 60px;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+.footer-text {
+  width: 50%;
+  flex-direction:row;
+  justify-content:space-between;
+}
+
+footer a[href="#header"] {
+  display: none;
 }
 
 }

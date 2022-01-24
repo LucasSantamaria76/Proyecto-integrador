@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./login.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="form">
+      <h1 id="titulo">Iniciar sesión</h1>
+      <input
+        type="text"
+        id="userNombre"
+        placeholder="Ingrese nombre de usuario"
+        autocomplete="off"
+      />
+      <input type="password" id="password" placeholder="Ingrese su password" />
+      <input
+        type="password"
+        id="RepetirPassword"
+        placeholder="Repita su password"
+      />
+      <button id="enlaceRegistro">No tienes cuenta, registrate?</button>
+      <div class="btns">
+        <button id="btnVolver" class="btn"><a href="index.html">Volver</a></button>
+        <button id="btnEnviar" class="btn">Enviar</button>
+      </div>
+      <p id="toast">mensaje</p>
+    </div>
+
+    <section class="modal">
+      <div class="modalContainer">
+        <img src="./img/error.svg" class="modalImg" />
+        <h2 class="modalTitle"></h2>
+        <button class="modalClose">Aceptar</button>
+      </div>
+    </section>
+
+    <script src="./login.js" type="module"></script>
+  </body>
+</html>

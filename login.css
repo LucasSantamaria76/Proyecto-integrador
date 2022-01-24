@@ -1,0 +1,186 @@
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url(./img/fondo6.jpg);
+  background-size: cover;
+  background-position: center center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form {
+  width: 450px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+input {
+  width: 80%;
+  height: 30px;
+  padding-left: 8px;
+  margin-top: 6px;
+  border: 1px solid rgba(177, 241, 103, 0.691);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.431);
+}
+
+.btns {
+  width: 80%;
+  display: flex;
+}
+
+.btn {
+  width: 80%;
+  height: 40px;
+  margin-top: 6px;
+  margin-right: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgba(177, 241, 103, 0.507);
+  transition: all 0.2s linear;
+}
+
+.btn:hover {
+  background-color: rgba(93, 151, 27, 0.507);
+}
+
+#enlaceRegistro {
+  background-color: #ffffff70;
+  color: rgb(253, 5, 5);
+  border: none;
+  border-radius: 15px;
+  margin-top: 6px;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#enlaceRegistro:hover {
+  color: #000;
+}
+
+#toast {
+  opacity: 0;
+  pointer-events: none;
+  width: 80%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(139, 3, 3, 0.781);
+  transition: opacity 0.3s ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+}
+
+.modal-show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.6s;
+}
+
+.modalContainer {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+}
+
+.modalTitle {
+  font-size: 2rem;
+}
+
+.modalImg {
+  width: 20%;
+  max-width: 60px;
+}
+
+.modalClose {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f26250;
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modalClose:hover {
+  color: #f26250;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 1400px) {
+  #form {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  input {
+    width: 98%;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .btns { width: 98% }
+  .btn { height: 50px}
+
+  #toast {
+    width: 98%;
+  }
+}
