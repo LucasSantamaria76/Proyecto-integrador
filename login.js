@@ -88,7 +88,7 @@ const enviarLoginRegistro = () => {
 
   const registroUsuario = () => {
     if ($pass.value === $repetirPass.value) {
-      const userId = Object.values(usuariosRegistrados).length
+      const userId = (Object.values(usuariosRegistrados).length !== 0)
         ? Object.values(usuariosRegistrados).length + 1
         : 1;
 
