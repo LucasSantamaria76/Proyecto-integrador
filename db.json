@@ -1,541 +1,455 @@
 {
-  "Users": [
-    {
-      "id": 1,
-      "nombre": "lucas",
-      "pass" : "lucas123"
+ "Verduras": {
+    "1":{
+      "nombre": "Acelga",
+      "precio": "120",
+      "stock": "10",
+      "img": "Acelga.jpg"
     },
-    {
-      "id": 2,
-      "nombre": "noelia",
-      "pass" : "bel123"
-    }
-  ],   
-  "Frutas": [
-    {
-      "id": 1,
-      "nombre": "Ananá",
-      "precio": "300",
+   "2": {
+      "nombre": "Ajo",
+      "precio": "60",
+      "stock": "15",
+      "img": "ajo.jpg"
+    },
+    "3":{
+      "nombre": "Albahaca",
+      "precio": "80",
       "stock": "100",
+      "img": "albahaca.jpg"
+    },
+    "4":{
+      "nombre": "Apio",
+      "precio": "100",
+      "stock": "100",
+      "img": "Apio.jpg"
+    },
+    "5":{
+      "nombre": "Batata",
+      "precio": "100",
+      "stock": "100",
+      "img": "batata.jpg"
+    },
+    "6":{
+      "nombre": "Batata Zanahoria",
+      "precio": "100",
+      "stock": "100",
+      "img": "batataZanahoria.jpg"
+    },    
+    "7":{
+      "nombre": "Berenjena",
+      "precio": "100",
+      "stock": "100",
+      "img": "berenjena.jpg"
+    },
+    "8":{
+      "nombre": "Brócoli",
+      "precio": "100",
+      "stock": "0",
+      "img": "brocoli.jpg"
+    },
+    "9":{
+      "nombre": "Ciboulette",
+      "precio": "100",
+      "stock": "100",
+      "img": "Ciboulette.jpg"
+    },
+    "10":{
+      "nombre": "Cebolla",
+      "precio": "100",
+      "stock": "100",
+      "img": "cebolla.jpg"
+    },
+    "11":{
+      "nombre": "Cebolla Morada",
+      "precio": "100",
+       "stock": "100",
+      "img": "cebollaMorada.jpg"
+    },
+    "12":{
+      "nombre": "Cebolla de Verdeo",
+      "precio": "100",
+      "stock": "100",
+      "img": "verdeo.jpg"
+    },    
+    "13":{
+      "nombre": "Champiñones",
+      "precio": "100",
+      "stock": "100",
+      "img": "Champi.jpg"
+    },
+    "14":{
+      "nombre": "Chauchin",
+      "precio": "100",
+      "stock": "100",
+      "img": "chauchin.jpg"
+    },
+    "15":{
+      "nombre": "Choclo",
+      "precio": "100",
+      "stock": "100",
+      "img": "choclo.jpg"
+    },
+    "16":{
+      "nombre": "Espinaca",
+      "precio": "100",
+      "stock": "100",
+      "img": "espinaca.jpg"
+    },
+    "17":{
+      "nombre": "Hinojo",
+      "precio": "100",
+      "stock": "100",
+      "img": "Hinojo.jpg"
+    },
+    "18":{
+      "nombre": "Jengibre",
+      "precio": "100",
+      "stock": "100",
+      "img": "Jengibre.jpg"
+    },
+    "19":{
+      "nombre": "Lechuga Crespa",
+      "precio": "100",
+      "stock": "100",
+      "img": "LechCrespa.jpg"
+    },
+    "20":{
+      "nombre": "Lechuga Criolla",
+      "precio": "100",
+      "stock": "100",
+      "img": "LechCriolla.jpg"
+    },
+    "21":{
+      "nombre": "Lechuga Mantecosa",
+      "precio": "100",
+      "stock": "100",
+      "img": "LechManteca.jpg"
+    },
+    "22":{
+      "nombre": "Lechuga Morada",
+      "precio": "100",
+      "stock": "100",
+      "img": "LechMorada.jpg"
+    },
+    "23":{
+      "nombre": "Lechuga Repollada",
+      "precio": "100",
+      "stock": "100",
+      "img": "LechRep.jpg"
+    },
+    "24":{
+      "nombre": "Morrón Amarillo",
+      "precio": "100",
+      "stock": "100",
+      "img": "morronAmarillo.jpg"
+    },
+    "25":{
+      "nombre": "Morrón Rojo",
+      "precio": "100",
+      "stock": "100",
+      "img": "morronRojo.jpg"
+    },
+    "26":{
+      "nombre": "Morrón Verde",
+      "precio": "100",
+      "stock": "100",
+      "img": "morronVerde.jpg"
+    },
+    "27":{
+      "nombre": "Paltas",
+      "precio": "100",
+      "stock": "100",
+      "img": "palta.jpg"
+    },
+    "28":{
+      "nombre": "Papa sucia",
+      "precio": "100",
+      "stock": "100",
+      "img": "Papasucia.jpg"
+    },
+    "29":{
+      "nombre": "Papa Lavada",
+      "precio": "100",
+      "stock": "0",
+      "img": "PapaLavada.jpg"
+    },
+    "30":{
+      "nombre": "Pepino",
+      "precio": "100",
+      "stock": "100",
+      "img": "pepino.jpg"
+    },
+    "31":{
+      "nombre": "Perejil",
+      "precio": "100",
+      "stock": "100",
+      "img": "Perejil.jpg"
+    },
+    "32":{
+      "nombre": "Ajo-Porro",
+      "precio": "100",
+      "stock": "100",
+      "img": "AJO-PORRO.jpg"
+    },
+    "33":{
+      "nombre": "Rabanitos",
+      "precio": "100",
+      "stock": "0",
+      "img": "rabanito.jpg"
+    },
+    "34":{
+      "nombre": "Remolacha",
+      "precio": "100",
+      "stock": "100",
+      "img": "remolacha.jpg"
+    },
+    "35":{
+      "nombre": "Repollo Blanco",
+      "precio": "100",
+      "stock": "100",
+      "img": "repolloblanco.jpg"
+    },
+    "36":{
+      "nombre": "Repollo Colorado",
+      "precio": "100",
+      "stock": "100",
+      "img": "RepolloColorado.jpg"
+    },
+    "37":{
+      "nombre": "Rúcula",
+      "precio": "100",
+      "stock": "100",
+      "img": "rucula.jpg"
+    },
+    "38":{
+      "nombre": "Tómate Cherry",
+      "precio": "100",
+      "stock": "100",
+      "img": "cherry.jpg"
+    },
+    "39":{
+      "nombre": "Tómate Elegido",
+      "precio": "100",
+      "stock": "100",
+      "img": "tomateEleg.jpg"
+    },
+    "40":{
+      "nombre": "Tómate oferta",
+      "precio": "100",
+      "stock": "0",
+      "img": "TomateOF.webp"
+    },
+    "41":{
+      "nombre": "Tómate Perita",
+      "precio": "100",
+      "stock": "100",
+      "img": "tomatePerita.jpg"
+    },
+    "42":{
+      "nombre": "Zanahoria",
+      "precio": "100",
+      "stock": "100",
+      "img": "Zanahoria.jpg"
+    },
+    "43":{
+      "nombre": "Zapallito de Tronco",
+      "precio": "100",
+      "stock": "100",
+      "img": "zapallito.jpg"
+    },
+    "44":{
+      "nombre": "Zapallo Anco",
+      "precio": "100",
+      "stock": "100",
+      "img": "ZapalloAnco.jpg"
+    },
+    "45":{
+      "nombre": "Zapallo Brasilero",
+      "precio": "100",
+      "stock": "100",
+      "img": "ZapalloBrasil.jpg"
+    },
+    "46":{
+      "nombre": "Zuquini",
+      "precio": "100",
+      "stock": "100",
+      "img": "Zuquini.jpg"
+    }
+    },
+"Frutas": {
+    "100":{
+      "nombre": "Ananá",
+      "precio": "390",
+      "stock": "0",
       "img": "Anana.jpg"
     },
-    {
-      "id": 2,
+    "101":{
       "nombre": "Arándanos",
-      "precio": "120",
-      "stock": "100",
+      "precio": "180",
+      "stock": "10",
       "img": "arandanos.jpg"
     },
-    {
-      "id": 3,
+    "102":{
       "nombre": "Banana Brasil",
-      "precio": "100",
+      "precio": "220",
+      "stock": "290",
       "img": "BananaBrasil.jpg"
     },
-    {
-      "id": 4,
+    "103":{
       "nombre": "Banana Ecuador",
       "precio": "250",
-      "stock": "100",
+      "stock": "290",
       "img": "BananaEcuador.jpg"
     },
-    {
-      "id": 5,
+    "104":{
       "nombre": "Cereza",
-      "precio": "100",
-      "stock": "100",
+      "precio": "720",
+      "stock": "110",
       "img": "cereza.jpg"
     },
-    {
-      "id": 6,
+    "105":{
       "nombre": "Ciruela",
-      "precio": "100",
-      "stock": "100",
+      "precio": "300",
+      "stock": "0",
       "img": "ciruela.jpg"
     },
-    {
-      "id": 7,
+    "106":{
       "nombre": "Durazno Blanco",
-      "precio": "100",
-      "stock": "100",
+      "precio": "390",
+      "stock": "0",
       "img": "DuraznoBlanco.jpg"
     },
-    {
-      "id": 8,
+    "107":{
       "nombre": "Durazno Elegido",
-      "precio": "100",
-      "stock": "100",
+      "precio": "350",
+      "stock": "25",
       "img": "duraznoElegido.jpg"
     },
-    {
-      "id": 9,
+    "108":{
       "nombre": "Durazno Comercial",
-      "precio": "100",
-      "stock": "100",
+      "precio": "250",
+      "stock": "0",
       "img": "duraznoComercial.jpg"
     },
-    {
-      "id": 10,
+    "109":{
       "nombre": "Frutillas",
-      "precio": "100",
-      "stock": "100",
+      "precio": "200 ",
+      "stock": "0",
       "img": "frutilla.jpg"
     },
-        {
-      "id": 11,
+    "110":{
       "nombre": "Kiwi",
       "precio": "100",
       "stock": "100",
       "img": "kiwi.jpg"
     },   
-     {
-      "id": 12,
+    "111":{
       "nombre": "Limón",
       "precio": "100",
       "stock": "100",
       "img": "limon.jpg"
     },    
-    {
-      "id": 13,
+    "112":{
       "nombre": "Mandarina Elegida",
       "precio": "100",
       "stock": "100",
       "img": "mandarina.jpg"
     },  
-      {
-      "id": 14,
+    "113":{
       "nombre": "Mandarina Comercial",
       "precio": "100",
       "stock": "100",
-      "img": ""
+      "img": "mandarinaComercial.png"
     },   
-     {
-      "id": 15,
+    "114":{
       "nombre": "Manzana Verde",
       "precio": "100",
       "stock": "100",
       "img": "manzanaVerde.jpg"
     },    
-    {
-      "id": 16,
+    "115":{
       "nombre": "Manzana Caja",
       "precio": "100",
       "stock": "100",
       "img": "ManzanaCaja.jpg"
     },    
-    {
-      "id": 17,
+    "116":{
       "nombre": "Manzana Comercial",
       "precio": "100",
       "stock": "100",
       "img": "ManzanaComercial.jpg"
     },   
-     {
-      "id": 18,
+    "117":{
       "nombre": "Melón",
       "precio": "100",
       "stock": "100",
       "img": "melon.jpg"
     },   
-     {
-      "id": 19,
+    "118":{
       "nombre": "Naranja Elegida",
       "precio": "100",
       "stock": "100",
       "img": "naranjaElegida.jpg"
     },   
-     {
-      "id": 20,
+    "119":{
       "nombre": "Naranja Comercial",
       "precio": "100",
       "stock": "100",
       "img": "naranjaComercial.jpg"
     },
-     {
-      "id": 21,
+    "120":{
       "nombre": "Pera",
       "precio": "100",
       "stock": "100",
       "img": "pera.jpg"
     },
-     {
-      "id": 22,
+    "121":{
       "nombre": "Pomelo Rojo",
       "precio": "100",
       "stock": "100",
       "img": "pomeloRojo.jpg"
     },
-     {
-      "id": 23,
+    "122":{
       "nombre": "Sandia",
       "precio": "100",
-       "stock": "100",
-     "img": "Sandia.jpg"
+      "stock": "100",
+      "img": "Sandia.jpg"
     },
-        {
-      "id": 24,
+    "123":{
       "nombre": "Sandia Postre",
       "precio": "100",
-       "stock": "100",
-     "img": "SandiaPostre.jpg"
+      "stock": "100",
+      "img": "SandiaPostre.jpg"
     },
-    {
-      "id": 25,
+    "124":{
       "nombre": "Uva Blanca",
       "precio": "100",
-       "stock": "100",
-     "img": "UvaBlanca.jpg"
+      "stock": "100",
+      "img": "UvaBlanca.jpg"
     }, 
-    {
-      "id": 26,
+    "125":{
       "nombre": "Uva Negra",
       "precio": "100",
-       "stock": "100",
-     "img": "UvaNegra.jpg"
+      "stock": "100",
+      "img": "UvaNegra.jpg"
     },
-    {
-      "id": 27,
+    "126":{
       "nombre": "Pelón Amarillo",
       "precio": "100",
       "stock": "100",
-     "img": "PelonAmarillo.jpg"
+      "img": "PelonAmarillo.jpg"
     },
-    {
-      "id": 28,
+    "127":{
       "nombre": "Pelón Blanco",
       "precio": "100",
-       "stock": "100",
-     "img": "PelonBlanco.jpg"
+      "stock": "100",
+      "img": "PelonBlanco.jpg"
     },
-    {
-      "id": 22,
+    "128":{
       "nombre": "Uva Rosada",
       "precio": "100",
-       "stock": "100",
-     "img": "UvaRosada.jpg"
+      "img": "UvaRosada.jpg"
     }
-  ],
-  "Verduras": [
-    {
-      "id": 1,
-      "nombre": "Acelga",
-      "precio": "100",
-      "img": "Acelga.jpg"
-    },
-    {
-      "id": 2,
-      "nombre": "Ajo",
-     "precio": "100",
-      "stock": "100",
-      "img": "ajo.jpg"
-    },
-    {
-      "id": 3,
-      "nombre": "Albahaca",
-     "precio": "100",
-      "stock": "100",
-      "img": "albahaca.jpg"
-    },
-    {
-      "id": 4,
-      "nombre": "Apio",
-     "precio": "100",
-      "stock": "100",
-      "img": "Apio.jpg"
-    },
-    {
-      "id": 5,
-      "nombre": "Batata",
-     "precio": "100",
-      "stock": "100",
-      "img": "batata.jpg"
-    },
-    {
-      "id": 6,
-      "nombre": "Batata Zanahoria",
-     "precio": "100",
-       "stock": "100",
-     "img": "batataZanahoria.jpg"
-    },    
-    {
-      "id": 7,
-      "nombre": "Berenjena",
-     "precio": "100",
-      "stock": "100",
-      "img": "berenjena.jpg"
-    },
-    {
-      "id": 8,
-      "nombre": "Brócoli",
-     "precio": "100",
-      "stock": "100",
-      "img": "brocoli.jpg"
-    },
-    {
-      "id": 9,
-      "nombre": "Ciboulette",
-     "precio": "100",
-      "stock": "100",
-      "img": "Ciboulette.jpg"
-    },
-    {
-      "id": 10,
-      "nombre": "Cebolla",
-     "precio": "100",
-       "stock": "100",
-     "img": "cebolla.jpg"
-    },
-    {
-      "id": 11,
-      "nombre": "Cebolla Morada",
-     "precio": "100",
-       "stock": "100",
-     "img": "cebollaMorada.jpg"
-    },
-    {
-      "id": 12,
-      "nombre": "Cebolla de Verdeo",
-     "precio": "100",
-      "stock": "100",
-      "img": "verdeo.jpg"
-    },    
-    {
-      "id": 13,
-      "nombre": "Champiñones",
-     "precio": "100",
-       "stock": "100",
-     "img": "Champi.jpg"
-    },
-    {
-      "id": 14,
-      "nombre": "Chauchin",
-     "precio": "100",
-       "stock": "100",
-     "img": "chauchin.jpg"
-    },
-    {
-      "id": 15,
-      "nombre": "Choclo",
-     "precio": "100",
-      "stock": "100",
-      "img": "choclo.jpg"
-    },
-    {
-      "id": 16,
-      "nombre": "Espinaca",
-     "precio": "100",
-       "stock": "100",
-     "img": "espinaca.jpg"
-    },
-    {
-      "id": 17,
-      "nombre": "Hinojo",
-     "precio": "100",
-       "stock": "100",
-     "img": "Hinojo.jpg"
-    },
-    {
-      "id": 18,
-      "nombre": "Jengibre",
-     "precio": "100",
-       "stock": "100",
-     "img": "Jengibre.jpg"
-    },
-    {
-      "id": 19,
-      "nombre": "Lechuga Crespa",
-     "precio": "100",
-       "stock": "100",
-     "img": "LechCrespa.jpg"
-    },
-    {
-      "id": 20,
-      "nombre": "Lechuga Criolla",
-     "precio": "100",
-      "stock": "100",
-      "img": "LechCriolla.jpg"
-    },
-    {
-      "id": 21,
-      "nombre": "Lechuga Mantecosa",
-     "precio": "100",
-      "stock": "100",
-      "img": "LechManteca.jpg"
-    },
-    {
-      "id": 22,
-      "nombre": "Lechuga Morada",
-     "precio": "100",
-      "stock": "100",
-      "img": "LechMorada.jpg"
-    },
-    {
-      "id": 23,
-      "nombre": "Lechuga Repollada",
-     "precio": "100",
-      "stock": "100",
-      "img": "LechRep.jpg"
-    },
-    {
-      "id": 24,
-      "nombre": "Morrón Amarillo",
-     "precio": "100",
-       "stock": "100",
-     "img": "morronAmarillo.jpg"
-    },
-    {
-      "id": 25,
-      "nombre": "Morrón Rojo",
-     "precio": "100",
-       "stock": "100",
-     "img": "morronRojo.jpg"
-    },
-    {
-      "id": 26,
-      "nombre": "Morrón Verde",
-     "precio": "100",
-      "stock": "100",
-      "img": "morronVerde.jpg"
-    },
-    {
-      "id": 27,
-      "nombre": "Paltas",
-     "precio": "100",
-       "stock": "100",
-     "img": "palta.jpg"
-    },
-    {
-      "id": 28,
-      "nombre": "Papa sucia",
-     "precio": "100",
-       "stock": "100",
-     "img": "Papasucia.jpg"
-    },
-    {
-      "id": 29,
-      "nombre": "Papa Lavada",
-     "precio": "100",
-       "stock": "100",
-     "img": "PapaLavada.jpg"
-    },
-    {
-      "id": 30,
-      "nombre": "Pepino",
-     "precio": "100",
-      "stock": "100",
-      "img": "pepino.jpg"
-    },
-    {
-      "id": 31,
-      "nombre": "Perejil",
-     "precio": "100",
-      "stock": "100",
-      "img": "Perejil.jpg"
-    },
-    {
-      "id": 32,
-      "nombre": "Ajo-Porro",
-     "precio": "100",
-      "stock": "100",
-      "img": "AJO-PORRO.jpg"
-    },
-    {
-      "id": 33,
-      "nombre": "Rabanitos",
-     "precio": "100",
-       "stock": "100",
-     "img": "rabanito.jpg"
-    },
-    {
-      "id": 34,
-      "nombre": "Remolacha",
-     "precio": "100",
-       "stock": "100",
-     "img": "remolacha.jpg"
-    },
-    {
-      "id": 35,
-      "nombre": "Repollo Blanco",
-     "precio": "100",
-      "stock": "100",
-      "img": "repolloblanco.jpg"
-    },
-    {
-      "id": 36,
-      "nombre": "Repollo Colorado",
-     "precio": "100",
-       "stock": "100",
-     "img": "RepolloColorado.jpg"
-    },
-    {
-      "id": 37,
-      "nombre": "Rúcula",
-     "precio": "100",
-      "stock": "100",
-      "img": "rucula.jpg"
-    },
-    {
-      "id": 38,
-      "nombre": "Tómate Cherry",
-     "precio": "100",
-       "stock": "100",
-     "img": "cherry.jpg"
-    },
-    {
-      "id": 10,
-      "nombre39": "Tómate Elegido",
-     "precio": "100",
-      "stock": "100",
-      "img": "tomateEleg.jpg"
-    },
-    {
-      "id": 40,
-      "nombre": "Tómate oferta",
-     "precio": "100",
-       "stock": "100",
-     "img": "TomateOF.webp"
-    },
-    {
-      "id": 41,
-      "nombre": "Tómate Perita",
-     "precio": "100",
-       "stock": "100",
-     "img": "tomatePerita.jpg"
-    },
-    {
-      "id": 42,
-      "nombre": "Zanahoria",
-     "precio": "100",
-       "stock": "100",
-     "img": "Zanahoria.jpg"
-    },
-    {
-      "id": 43,
-      "nombre": "Zapallito de Tronco",
-     "precio": "100",
-       "stock": "100",
-     "img": "zapallito.jpg"
-    },
-    {
-      "id": 44,
-      "nombre": "Zapallo Anco",
-     "precio": "100",
-       "stock": "100",
-     "img": "ZapalloAnco.jpg"
-    },
-    {
-      "id": 45,
-      "nombre": "Zapallo Brasilero",
-     "precio": "100",
-       "stock": "100",
-     "img": "ZapalloBrasil.jpg"
-    },
-    {
-      "id": 46,
-      "nombre": "Zuquini",
-     "precio": "100",
-       "stock": "100",
-     "img": "Zuquini.jpg"
-    }
-  ]
+ }
 }

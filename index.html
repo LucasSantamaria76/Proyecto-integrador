@@ -4,48 +4,78 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=The+Nautigal:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
   <body>
     <header id="header">
       <nav class="navbar">
-          <div class="logo">
-            Frutas online
-          </div>
+        <div class="logo">Frutas online</div>
         <div class="barraMenu">
-            <input type="checkbox" id="btn-menu" />
-            <label for="btn-menu" id="burger">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0  1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          <input type="checkbox" id="btn-menu" />
+          <label for="btn-menu" id="burger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0  1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </label>
+          <div class="menu">
+            <a href="#main">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="contacto.html">Contacto</a>
+          </div>
+          <div class="menuIcons">
+            <div id="iconoUser"></div>
+            <a href="login.html" id="iconoLogin">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                />
               </svg>
-            </label>
-            <div class="menu">
-              <a href="#main">Inicio</a>
-              <a href="#productos">Productos</a>
-              <a href="contacto.html">Contacto</a>
-            </div>
-            <div class="menuIcons">
-              <div id="iconoUser"></div>
-              <a href="login.html" id="iconoLogin">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
-                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                </svg>              
-              </a>
-              <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
-                  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+            </a>
+            <a href="" id="iconoCarrito">
+              <div class="contenedor-icono-carrito">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                  />
                 </svg>
-              </a>
-            </div>
+                <div id="num-items"></div>
+              </div>
+            </a>
+          </div>
         </div>
       </nav>
     </header>
-<!--     <main id="main">
+    <!--         <main id="main">
        <div class="box-text">
          <h1>Frutas online</h1>
          <h3>Venta minorista de frutas y verduras</h3>
@@ -53,109 +83,72 @@
     </main> -->
     <section id="productos">
       <select id="select">
-       <option value="Verduras" selected>Verduras</option>
-       <option value="Frutas">Frutas</option>
+        <option value="Verduras" selected>Verduras</option>
+        <option value="Frutas">Frutas</option>
       </select>
-      <div id="grid-productos" class="grid-fluid">
+      <div id="grid-productos" class="grid-fluid"></div>
+    </section>
 
-        <!-- <div class="card">
-          <img src="./img/Acelga.jpg" alt="acelga">
-          <div class="contenido">
-            <h2>ACELGA x atado</h2>
-            <h3>Precio: $60</h3>
-          </div>
+    <section class="contenedor-carrito">
+      <div class="carrito">
+        <h2 class="titulo-carrito">Carrito de compras</h2>
+        <div class="headerCarrito">
+          <h3>Items</h3>
+          <h3>Cantidad</h3>
+          <h3>Precio</h3>
+          <h3>Total</h3>
         </div>
-        <div class="card">
-          <img src="./img/ajo.jpg" alt="ajo">
-          <div class="contenido">
-            <h2>AJO x cabeza</h2>
-            <h3>Precio: $60</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/batata.jpg" alt="acelga">
-          <div class="contenido">
-            <h2>BATATA x kg</h2>
-            <h3>Precio: $120</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/TomateOF.webp" alt="ajo">
-          <div class="contenido">
-            <h2>TOMATE x kg</h2>
-            <h3>Precio: $150</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/Zanahoria.jpg" alt="acelga">
-          <div class="contenido">
-            <h2>ZANAHORIA x kg</h2>
-            <h3>Precio: $60</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/cebolla.jpg" alt="ajo">
-          <div class="contenido">
-            <h2>Cebolla x kg</h2>
-            <h3>Precio: $80</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/BananaEcuador.jpg" alt="banana ecuador">
-          <div class="contenido">
-            <h2>Banana Ecuador x kg</h2>
-            <h3>Precio: $260</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/ciruela.jpg" alt="ciruela">
-          <div class="contenido">
-            <h2>Ciruela x kg</h2>
-            <h3>Precio: $450</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/duraznoElegido.jpg" alt="durazno">
-          <div class="contenido">
-            <h2>Durazno elegido x kg</h2>
-            <h3>Precio: $350</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/frutilla.jpg" alt="frutilla">
-          <div class="contenido">
-            <h2>Frutilla x kg</h2>
-            <h3>Precio: $750</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/mandarina.jpg" alt="mandarina">
-          <div class="contenido">
-            <h2>Mandarina x kg</h2>
-            <h3>Precio: $250</h3>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/naranjaElegida.jpg" alt="naranja">
-          <div class="contenido">
-            <h2>Naranja Elegida x kg</h2>
-            <h3>Precio: $120</h3>
-          </div>
-        </div>         -->
+        <div id="itemsCarrito"></div>
+        <div id="footerCarrito"></div>
       </div>
     </section>
     <footer>
       <a href="#header">Ir a inicio</a>
       <div class="footer-text">
-       <h6>Todos los derecho reservados. Copyright © 2022.</h6>
-       <h6>Teléfono de contacto 055 555-5555</h6>
+        <h6>Todos los derecho reservados. Copyright © 2022.</h6>
+        <h6>Teléfono de contacto 055 555-5555</h6>
       </div>
       <div class="footer_social">
-          <a href="" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="" target="_blank"><i class="bi bi-instagram"></i></a>        
-          <a href="" target="_blank"><i class="bi bi-twitter"></i></a>
-       </div>
+        <a href="" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="" target="_blank"><i class="bi bi-twitter"></i></a>
+      </div>
     </footer>
+
+    <template id="template-card">
+      <article class="product-card">
+        <h3></h3>
+        <img />
+        <div class="sinStock">Sin stock</div>
+        <div class="card-info">
+          <h4></h4>
+          <button class="btn">Comprar</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="template-carrito">
+      <div class="row-carrito">
+        <img />
+        <h3 id="item"></h3>
+        <div><input type="number" id="inputCantidad" min="0" /></div>
+        <h4>$<span>precio</span></h4>
+        <h3>$ <span>total</span></h3>
+      </div>
+    </template>
+
+    <template id="template-footer">
+      <div class="footer-linea1">
+        <h4>Total carrito</h4>
+        <div class="nCantidad"></div>
+        <button class="btn-vaciar">Vaciar carrito</button>
+        <h3 class="totalCarrito">$ <span>total</span></h3>
+      </div>
+      <div class="footer-linea2">
+       <button class="btn-footer" id="btnContinuar">Continuar comprando</button> 
+       <button class="btn-footer" id="btnComprar">Terminar compra</button> 
+      </div>
+    </template>
     <script src="./app.js" type="module"></script>
   </body>
 </html>
