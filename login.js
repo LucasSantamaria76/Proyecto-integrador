@@ -1,24 +1,23 @@
-const $userNombre = document.getElementById("userNombre");
-const $pass = document.getElementById("password");
-const $repetirPass = document.getElementById("RepetirPassword");
-const $enlaceReg = document.getElementById("enlaceRegistro");
-const $titulo = document.getElementById("titulo");
-const $btnEnviar = document.getElementById("btnEnviar");
-const $toast = document.getElementById("toast");
-
-// Modal
-const $showModal = document.querySelector(".modal");
-const $closeModal = document.querySelector(".modalClose");
-const $modalTitle = document.querySelector(".modalTitle");
+const $userNombre = document.getElementById("userNombre"),
+  $pass = document.getElementById("password"),
+  $repetirPass = document.getElementById("RepetirPassword"),
+  $enlaceReg = document.getElementById("enlaceRegistro"),
+  $titulo = document.getElementById("titulo"),
+  $btnEnviar = document.getElementById("btnEnviar"),
+  $btnVolver = document.getElementById("btnVolver"),
+  $toast = document.getElementById("toast"),
+  // Modal
+  $showModal = document.querySelector(".modal"),
+  $closeModal = document.querySelector(".modalClose"),
+  $modalTitle = document.querySelector(".modalTitle");
 
 const msgDialog = (title) => {
   $modalTitle.textContent = title;
   $showModal.classList.add("modal-show");
 };
 
-$closeModal.addEventListener("click", (e) =>
-  $showModal.classList.remove("modal-show")
-);
+$closeModal.onclick = () => $showModal.classList.remove("modal-show");
+$btnVolver.onclick = () => (location.href = "index.html");
 
 let usuariosRegistrados = {};
 
@@ -66,14 +65,14 @@ const enviarLoginRegistro = () => {
     } else {
       msgDialog("Usuario inexistente");
     }
-
   };
 
   const registroUsuario = () => {
     if ($pass.value === $repetirPass.value) {
-      const userId = (Object.values(usuariosRegistrados).length !== 0)
-        ? Object.values(usuariosRegistrados).length + 1
-        : 1;
+      const userId =
+        Object.values(usuariosRegistrados).length !== 0
+          ? Object.values(usuariosRegistrados).length + 1
+          : 1;
 
       const nuevoUsuario = {
         id: userId,

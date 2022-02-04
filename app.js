@@ -23,11 +23,15 @@ const $iconoUser = document.getElementById("iconoUser"),
 
 let data, productos, carrito, usuarioActivo, usuariosRegistrados;
 
+// Dialogo para mandar los mensajes
 const msgDialog = (title) => {
   $modalTitle.innerHTML = title;
   $showModal.classList.add("modal-show");
 };
-
+/*
+ función asíncrona para cargar la lista de productos de
+ desde el archivo json
+*/
 const getData = async () => {
   try {
     const res = await fetch("./db.json");
@@ -172,9 +176,15 @@ const pintarFooter = () => {
     $carritoDesplegable.classList.remove("mostarDesplegable");
 
   document.querySelector("#btnComprar").onclick = () => {
-    vaciarCarrito();
+    const nPrecio = Object.values(carrito).reduce(
+      (acc, { cantidad, precio }) => acc + cantidad * precio,
+      0
+    );
     $carritoDesplegable.classList.remove("mostarDesplegable");
-    msgDialog("Compra exitosa <br />Gracias por su compra");
+    vaciarCarrito();
+    msgDialog(
+      `Compra exitosa <br />total de la compra: $ ${nPrecio}<br />Gracias por su compra`
+    );
   };
 };
 

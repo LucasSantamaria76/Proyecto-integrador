@@ -447,6 +447,14 @@ h1 {
   clip-path: var(--mostarDesplegable);
 }
 
+.error {
+  background-color:#fff;
+  color: red;
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
 /* FOOTER */
 
 footer {
