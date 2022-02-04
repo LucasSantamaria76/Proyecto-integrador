@@ -47,9 +47,11 @@ const getData = async () => {
   }
 };
 
+/* Función para cambiar los productos activos frutas o verduras*/
 const cambiarTipoProducto = (tipoProducto = "Verduras") =>
   (productos = data[tipoProducto]);
 
+/* Función para renderizar las tarjetas de los productos activos */
 const renderProductos = () => {
   $gridProductos.innerHTML = "";
   for (let key in productos) {
@@ -73,11 +75,13 @@ const renderProductos = () => {
   $gridProductos.appendChild($fragmento);
 };
 
+/* Capturo el evento de los botones de las tarjetas y paso el id correspondiente a la tarjeta que genero el evento */
 const addCarrito = (e) => {
   e.target.classList.contains("btn") && setCarrito(e.target.dataset.id);
   e.stopPropagation();
 };
 
+/* Agrego un nuevo producto al carrito */
 const setCarrito = (id) => {
   const nuevoProducto = {
     nombre: productos[id].nombre,
@@ -87,6 +91,8 @@ const setCarrito = (id) => {
     stock: productos[id].stock,
     cantidad: 1,
   };
+  /* Si el carrito ya contiene el producto solo 
+  incremento la cantidad*/
   if (carrito.hasOwnProperty(id)) {
     nuevoProducto.cantidad = carrito[id].cantidad + 1;
   }
@@ -101,6 +107,8 @@ const setCarrito = (id) => {
   pintarCarrito();
 };
 
+/* Función para pintar el carrito cada vez que se agrage un 
+nuevo producto */
 const pintarCarrito = () => {
   $itemsCarrito.innerHTML = "";
   for (let key in carrito) {
@@ -116,9 +124,9 @@ const pintarCarrito = () => {
     const $clone = $templateCarrito.cloneNode(true);
     $fragmento.appendChild($clone);
   }
-
   $itemsCarrito.appendChild($fragmento);
 
+  /* Actualizo el carrito del usuario activo */
   usuariosRegistrados[usuarioActivo].carrito = carrito;
   localStorage.setItem(
     "UsuariosRegistrados",
@@ -128,6 +136,7 @@ const pintarCarrito = () => {
   pintarFooter();
 };
 
+/* Función para pintar el footer del cariito */
 const pintarFooter = () => {
   $footerCarrito.innerHTML = "";
 
@@ -157,9 +166,11 @@ const pintarFooter = () => {
   $fragmento.appendChild($clone);
 
   $footerCarrito.appendChild($fragmento);
-  $numItems.textContent = nCantidad;
+
+  $numItems.textContent = nCantidad; // Actualizo el número de productos comprados en el icono del carrito
 
   const vaciarCarrito = () => {
+    // Función para vaciar todo el carrito
     carrito = {};
     $numItems.textContent = 0;
     usuariosRegistrados[usuarioActivo].carrito = carrito;
@@ -173,8 +184,10 @@ const pintarFooter = () => {
   document.querySelector(".btn-vaciar").onclick = () => vaciarCarrito();
 
   document.querySelector("#btnContinuar").onclick = () =>
+    // Cierro la ventana del carrito
     $carritoDesplegable.classList.remove("mostarDesplegable");
 
+  /* termino la compra, vacio el carrito y muestro un msg*/
   document.querySelector("#btnComprar").onclick = () => {
     const nPrecio = Object.values(carrito).reduce(
       (acc, { cantidad, precio }) => acc + cantidad * precio,
@@ -189,11 +202,13 @@ const pintarFooter = () => {
 };
 
 $select.onchange = (e) => {
+  // Cambio el tipo de producto, Verdura o fruta
   cambiarTipoProducto(e.target.value);
   renderProductos();
 };
 
 $filtro.onkeyup = (e) => {
+  // Filtro la lista de productos
   let res = {};
   productos = data[$select.value];
   for (let key in productos) {
@@ -213,6 +228,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   usuariosRegistrados = JSON.parse(localStorage.getItem("UsuariosRegistrados"));
   usuarioActivo = JSON.parse(localStorage.getItem("UsuarioActivo"));
 
+  data = await getData();
+
   if (usuarioActivo && usuariosRegistrados) {
     $iconoLogin.style.display = "none";
     $iconoUser.textContent = usuarioActivo[0];
@@ -223,20 +240,25 @@ document.addEventListener("DOMContentLoaded", async () => {
       (acc, { cantidad }) => acc + cantidad,
       0
     );
+
     $numItems.textContent = nCantidad;
+
     pintarCarrito();
   } else {
     $numItems.style.display = "none";
     $iconoUser.style.display = "none";
   }
-  data = await getData();
   cambiarTipoProducto();
   renderProductos();
+  setTimeout(() => {
+    // muestro por 2 seg. el inicio y paso al listado de productos
+    location.href = "#productos";
+  }, 2000);
 });
 
 $closeModal.onclick = (e) => $showModal.classList.remove("modal-show");
 
-$gridProductos.onclick = (e) => addCarrito(e);
+$gridProductos.onclick = (e) => addCarrito(e); // capturo el evento de las tarjetas y lo delego a la función
 
 $iconoUser.onclick = () => {
   if (confirm("¿Está seguro de cerrar la sesión?")) {
@@ -246,20 +268,22 @@ $iconoUser.onclick = () => {
 };
 
 $iconoCarrito.onclick = (e) => {
+  // Abrir ventana modal del carrito
   e.preventDefault();
   carrito && $carritoDesplegable.classList.toggle("mostarDesplegable");
 };
 
-$itemsCarrito.onchange = (e) => {
+$itemsCarrito.onchange = (e) => { // capturo el evento del input numerico
   if (e.target.dataset.id) {
     const producto = carrito[e.target.dataset.id];
-    producto.cantidad = Number(e.target.value);
+    producto.cantidad = Number(e.target.value); // le asigno el valor del input a la cantidad del producto
 
-    producto.cantidad === 0
-      ? delete carrito[e.target.dataset.id]
-      : (carrito[e.target.dataset.id] = { ...producto });
+    if (producto.cantidad === 0) { // si la cantidad llega a 0 elimino el producto del carrito
+      delete carrito[e.target.dataset.id];
+      pintarCarrito();
+    } else carrito[e.target.dataset.id] = { ...producto };
 
-    pintarCarrito();
+    pintarFooter();
   }
 
   e.stopPropagation();
