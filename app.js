@@ -4,15 +4,70 @@ const $iconoUser = document.getElementById("iconoUser"),
   $numItems = document.getElementById("num-items"),
   $gridProductos = document.getElementById("grid-productos"),
   $select = document.getElementById("select"),
+  $filtro = document.getElementById("filtro"),
   $template = document.querySelector("#template-card").content,
   $fragmento = document.createDocumentFragment(),
   $carritoDesplegable = document.querySelector(".contenedor-carrito"),
   $itemsCarrito = document.getElementById("itemsCarrito"),
   $footerCarrito = document.getElementById("footerCarrito"),
   $templateFooter = document.getElementById("template-footer").content,
-  $templateCarrito = document.getElementById("template-carrito").content;
+  $templateCarrito = document.getElementById("template-carrito").content,
+  $burger = document.querySelector(".burger"),
+  $enlaces = document.querySelector(".enlaces-menu"),
+  $grilla = document.querySelector(".grid-fluid"),
+  $barras = document.querySelectorAll(".burger span"),
+  // Modal
+  $showModal = document.querySelector(".modal"),
+  $closeModal = document.querySelector(".modalClose"),
+  $modalTitle = document.querySelector(".modalTitle");
 
-let productos, carrito, usuarioActivo, usuariosRegistrados;
+let data, productos, carrito, usuarioActivo, usuariosRegistrados;
+
+const msgDialog = (title) => {
+  $modalTitle.innerHTML = title;
+  $showModal.classList.add("modal-show");
+};
+
+const getData = async () => {
+  try {
+    const res = await fetch("./db.json");
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    } else throw new Error(res);
+  } catch (error) {
+    let msg = error.statusText || "Error al cargar los datos";
+    console.log(msg);
+    document.getElementById("grid-productos").innerHTML = `
+     <div class="error"><p>Error ${error.status}: ${msg}</p></div>`;
+  }
+};
+
+const cambiarTipoProducto = (tipoProducto = "Verduras") =>
+  (productos = data[tipoProducto]);
+
+const renderProductos = () => {
+  $gridProductos.innerHTML = "";
+  for (let key in productos) {
+    $template.querySelector("img").src = "./img/" + productos[key].img;
+    $template.querySelector("img").alt = productos[key].img;
+    $template.querySelector("H3").textContent = productos[key].nombre;
+    $template.querySelector("H4").textContent =
+      "precio: $ " + productos[key].precio;
+    $template.querySelector("button").dataset.id = key;
+    if (productos[key].stock == "0") {
+      $template.querySelector(".sinStock").style.display = "block";
+      $template.querySelector("button").disabled = true;
+    } else {
+      $template.querySelector("button").disabled = false;
+      $template.querySelector(".sinStock").style.display = "none";
+    }
+
+    let clone = $template.cloneNode(true);
+    $fragmento.appendChild(clone);
+  }
+  $gridProductos.appendChild($fragmento);
+};
 
 const addCarrito = (e) => {
   e.target.classList.contains("btn") && setCarrito(e.target.dataset.id);
@@ -111,61 +166,40 @@ const pintarFooter = () => {
     pintarCarrito();
   };
 
-  document
-    .querySelector(".btn-vaciar")
-    .addEventListener("click", () => vaciarCarrito());
+  document.querySelector(".btn-vaciar").onclick = () => vaciarCarrito();
 
-  document
-    .querySelector("#btnContinuar")
-    .addEventListener("click", () =>
-      $carritoDesplegable.classList.remove("mostarDesplegable")
-    );
+  document.querySelector("#btnContinuar").onclick = () =>
+    $carritoDesplegable.classList.remove("mostarDesplegable");
 
-  document.querySelector("#btnComprar").addEventListener("click", () => {
+  document.querySelector("#btnComprar").onclick = () => {
     vaciarCarrito();
     $carritoDesplegable.classList.remove("mostarDesplegable");
-  });
+    msgDialog("Compra exitosa <br />Gracias por su compra");
+  };
 };
 
-const renderProductos = (tipoProducto = "Verduras") => {
-  fetch("./db.json")
-    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-    .then((resProductos) => {
-      productos = resProductos[tipoProducto];
-      for (let key in productos) {
-        $template.querySelector("img").src = "./img/" + productos[key].img;
-        $template.querySelector("img").alt = productos[key].img;
-        $template.querySelector("H3").textContent = productos[key].nombre;
-        $template.querySelector("H4").textContent =
-          "precio: $ " + productos[key].precio;
-        $template.querySelector("button").dataset.id = key;
-        if(productos[key].stock == "0"){
-          $template.querySelector(".sinStock").style.display = "block";
-          $template.querySelector("button").disabled = true;
-        }else {
-          $template.querySelector("button").disabled = false;
-          $template.querySelector(".sinStock").style.display = "none";          
-        }
-
-        let clone = $template.cloneNode(true);
-        $fragmento.appendChild(clone);
-      }
-      $gridProductos.appendChild($fragmento);
-    })
-    .catch((error) => {
-      let msg = error.statusText || "Error al cargar los datos";
-      console.log(msg);
-      document.getElementById("grid-productos").innerHTML = `
-      <div class="error"><p>Error ${error.status}: ${msg}</p></div>`;
-    });
+$select.onchange = (e) => {
+  cambiarTipoProducto(e.target.value);
+  renderProductos();
 };
 
-$select.addEventListener("change", (e) => {
-  $gridProductos.innerHTML = "";
-  renderProductos(e.target.value);
-});
+$filtro.onkeyup = (e) => {
+  let res = {};
+  productos = data[$select.value];
+  for (let key in productos) {
+    const nombre = productos[key].nombre
+      .toLowerCase()
+      .slice(0, e.target.value.length);
+    if (nombre.includes(e.target.value.toLowerCase())) {
+      const nProducto = productos[key];
+      res[key] = { ...nProducto };
+    }
+  }
+  productos = { ...res };
+  renderProductos();
+};
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   usuariosRegistrados = JSON.parse(localStorage.getItem("UsuariosRegistrados"));
   usuarioActivo = JSON.parse(localStorage.getItem("UsuarioActivo"));
 
@@ -185,8 +219,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $numItems.style.display = "none";
     $iconoUser.style.display = "none";
   }
+  data = await getData();
+  cambiarTipoProducto();
   renderProductos();
 });
+
+$closeModal.onclick = (e) => $showModal.classList.remove("modal-show");
 
 $gridProductos.onclick = (e) => addCarrito(e);
 
@@ -202,7 +240,7 @@ $iconoCarrito.onclick = (e) => {
   carrito && $carritoDesplegable.classList.toggle("mostarDesplegable");
 };
 
-$itemsCarrito.addEventListener("change", (e) => {
+$itemsCarrito.onchange = (e) => {
   if (e.target.dataset.id) {
     const producto = carrito[e.target.dataset.id];
     producto.cantidad = Number(e.target.value);
@@ -215,4 +253,14 @@ $itemsCarrito.addEventListener("change", (e) => {
   }
 
   e.stopPropagation();
-});
+};
+
+$burger.onclick = () => {
+  $enlaces.classList.toggle("activado");
+  $grilla.classList.toggle("activado");
+  $carritoDesplegable.classList.remove("mostarDesplegable");
+  $barras.forEach((child) => {
+    child.classList.toggle("animado");
+  });
+  $burger.classList.toggle("girar");
+};

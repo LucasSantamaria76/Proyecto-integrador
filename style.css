@@ -23,56 +23,70 @@ body {
 }
 
 .navbar {
+  position: fixed;
   width: 100%;
-  height: 60px;
+  height: 110px;
   background-color: rgb(195, 243, 211);
   border-bottom: 2px solid #000;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   box-shadow: -3px 10px 8px -2px rgba(68, 60, 60, 0.75);
 }
 
-#btn-menu {
-  display: none;
-}
-
 .barraMenu {
-  width: 60%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.menuIcons {
-  width: 150px;
+  width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-/* #burger {
+.burger {
+  display: block;
+  background-color: transparent;
   cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 3px;
+  transition: 0.2s 0.1s;
 }
 
-.menu {
+.burger span {
+  background-color: #000000;
+  display: block;
+  height: 3px;
+  width: 28px;
+  margin: 5px auto;
+  border-radius: 2px;
+}
+.enlaces-menu {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 95%;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #000;
-  font-size: 1.5rem;
-  width: 100%;
-  border-radius: 5px;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-} */
+  top: 55px;
+  right: 8px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  text-align: center;
+}
 
-#btn-menu:checked ~ .menu {
-  opacity: 97%;
+.enlaces-menu a {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.menuIcons {
+  width: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 svg {
@@ -81,11 +95,6 @@ svg {
 
 svg:hover {
   fill: rgb(214, 33, 33);
-}
-
-a {
-  text-decoration: none;
-  margin: 10px auto;
 }
 
 #iconoUser {
@@ -118,10 +127,6 @@ a {
   line-height: 25px;
 }
 
-.menu a:hover {
-  color: rgb(214, 33, 33);
-}
-
 #main {
   width: 100%;
   height: 100vh;
@@ -137,23 +142,26 @@ a {
 h1,
 .logo {
   font-family: "The Nautigal", cursive;
-  font-weight: 700;
+  font-weight: 400;
   text-shadow: 4px 4px 4px #000000;
 }
 
 h1 {
-  color: rgb(148, 44, 44);
-  font-size: 8rem;
-  padding: 30px;
-  margin: 20px auto;
+  background-color: #6be4d450;
+  color: rgb(206, 205, 205);
+  margin: 10px;
+  border-radius: 30px;
+  font-size: 6rem;
+  text-align: center;
 }
 
 .logo {
-  width: 250px;
+  width: 100%;
   height: 50px;
+  background-color: rgba(0, 0, 0, 0.15);
   color: #fff;
-  font-size: 3rem;
-  margin-left: 5px;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 .box-text {
@@ -182,13 +190,28 @@ h1 {
   align-items: center;
 }
 
-#select {
-  width: 50%;
+.barra-filtros {
+  width: 100%;
+  display: flex;
+  padding: 0 2px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#select,
+#filtro {
+  padding-left: 5px;
+  width: 48%;
   height: 50px;
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 1rem;
   background-color: rgba(128, 134, 115, 0.918);
   color: #fff;
+  border-radius: 8px;
+}
+
+#filtro {
+  background-color: rgba(236, 236, 236, 0.918);
+  color: #000;
 }
 
 .grid-fluid {
@@ -258,18 +281,18 @@ h1 {
 }
 
 /* Carrito */
+
 .contenedor-carrito {
-  position: absolute;
-  top: 62px;
+  position: fixed;
+  top: 113px;
   right: 1px;
-  z-index: 100;
+
   width: 99%;
   height: 80%;
   background-color: #fff;
   border: 2px solid #000;
   border-radius: 8px;
   clip-path: var(--ocultarDesplegable);
-  clip-path: var(--mostarDesplegable);
   transition: clip-path 0.2s ease-in-out;
 }
 
@@ -302,7 +325,7 @@ h1 {
 }
 
 .headerCarrito h3:first-child {
-  width: 25%;
+  width: 18%;
   text-align: center;
 }
 
@@ -343,6 +366,7 @@ h1 {
 
 .row-carrito div {
   width: 30px;
+  text-align: center;
 }
 
 .row-carrito h3:last-child {
@@ -384,11 +408,10 @@ h1 {
   align-items: center;
 }
 
-  .nCantidad {
-    width: 60px;
-    text-align: right;
-  }
-
+.nCantidad {
+  width: 60px;
+  text-align: right;
+}
 
 .btn-vaciar {
   height: 20px;
@@ -429,7 +452,7 @@ h1 {
 footer {
   margin-top: auto;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   background-color: rgb(0, 0, 0);
   color: white;
   display: flex;
@@ -463,39 +486,178 @@ i {
   color: white;
 }
 
+/* Animaciones */
+
+@keyframes muestraMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.grid-fluid.activado {
+  display: none;
+}
+
+.enlaces-menu.activado {
+  display: block;
+  animation: muestraMenu 350ms ease-in-out both;
+}
+
+.br-1.animado {
+  transform: rotate(-45deg) translate(-4px, 8px);
+}
+
+.br-2.animado {
+  opacity: 0;
+}
+.br-3.animado {
+  transform: rotate(45deg) translate(-4px, -8px);
+}
+
+.burger.girar:hover {
+  transform: rotate(360deg);
+}
+
+/* ventana Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+}
+
+.modal-show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.6s;
+}
+
+.modalContainer {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+}
+
+.modalTitle {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.modalImg {
+  width: 20%;
+  max-width: 60px;
+}
+
+.modalClose {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f26250;
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modalClose:hover {
+  color: #f26250;
+  background-color: #fff;
+}
+
 @media (min-width: 768px) {
-  #burger {
+  .burger {
     display: none;
   }
 
-  .barraMenu {
-    width: 50%;
-    justify-content: space-between;
-  }
   .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+    flex-direction: row;
+    height: 60px;
   }
 
-  .menu {
+  .barraMenu {
+    width: 40%;
     position: static;
+    justify-content: space-between;
+  }
+
+  .enlaces-menu {
     width: 70%;
+    height: 58px;
     background-color: transparent;
-    opacity: 100%;
-    color: #fff;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+    position: static;
+    border: none;
+    list-style: none;
+  }
+
+  .enlaces-menu a {
+    padding: 10px;
+    font-size: 1.4rem;
+    display: inline-flex;
+  }
+
+  .enlaces-menu li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .enlaces-menu a:hover {
+    background-color: #ffffff5d;
+    color: red;
+    border-radius: 10px;
+  }
+
+  .menuIcons {
+    width: 20%;
+    margin: 0;
+  }
+
+  .logo {
+    width: 20%;
+    background-color: transparent;
+    text-align: left;
+    margin-left: 10px;
+    line-height: 60px;
   }
 
   h1 {
     font-size: 10rem;
+    background-color: transparent;
   }
 
+  .barra-filtros {
+    padding: 0 5%;
+  }
+  
   #select {
     margin-top: 40px;
+  }
+
+  #select,
+  #filtro {
+    width: 30%;
+    font-size: 1.5rem;
   }
 
   #productos {
@@ -505,6 +667,7 @@ i {
   }
 
   .box-text {
+    padding: 20px;
     border: 1px solid #fff;
     border-radius: 15px;
     background-color: #ffffff70;
@@ -518,17 +681,9 @@ i {
 
   /* Carrito */
   .contenedor-carrito {
-    position: absolute;
     top: 62px;
     right: 7px;
-    z-index: 100;
     width: 40%;
-    height: 80%;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 8px;
-    clip-path: var(--ocultarDesplegable);
-    transition: clip-path 0.2s ease-in-out;
   }
 
   .carrito {
@@ -540,69 +695,19 @@ i {
     align-items: center;
   }
 
-  .titulo-carrito {
-    text-align: center;
-    width: 100%;
-    color: rgba(184, 21, 21, 0.808);
-  }
-
   .headerCarrito {
     height: 40px;
     width: 99%;
     line-height: 40px;
     font-size: 1.3rem;
-    border: 1px solid #000;
-    background-color: rgba(206, 228, 171, 0.7);
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    margin: 10px 0;
-    display: flex;
-  }
-
-  .headerCarrito h3 {
-    display: inline-block;
-    text-align: center;
-  }
-
-  .headerCarrito h3:first-child {
-    width: 30%;
-  }
-  .headerCarrito h3:nth-child(2) {
-    width: 15%;
-  }
-  .headerCarrito h3:nth-child(3) {
-    width: 30%;
-  }
-  .headerCarrito h3:nth-child(4) {
-    width: 20%;
-  }
-
-  #itemsCarrito {
-    width: 98%;
-    max-height: 70%;
-    margin-left: 5px;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
   }
 
   .row-carrito {
     font-size: 1.2rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid #000;
   }
 
-  .row-carrito h3 {
-    padding: 10px 5px;
-    width: 23%;
-    text-align: left;
-    margin: 0 5px;
-  }
   .row-carrito h4 {
     padding: 10px 5px;
-    width: 28%;
-    text-align: right;
     margin: 0 5px;
   }
 
@@ -610,17 +715,10 @@ i {
     width: 70px;
     height: 40px;
     font-size: 1.5rem;
-    text-align: center;
   }
 
   .row-carrito div {
     width: 15%;
-    text-align: center;
-  }
-
-  .row-carrito h3:last-child {
-    width: 25%;
-    text-align: right;
   }
 
   #itemsCarrito img {
@@ -638,29 +736,17 @@ i {
   .footer-linea1 {
     padding: 10px 10px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
-  .footer-linea2 {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .nCantidad {
+    width: 95px;
   }
-
-  .nCantidad { width: 95px;}
 
   .btn-vaciar {
     height: 40px;
     padding: 10px;
     border-radius: 8px;
     font-size: 1rem;
-    background-color: rgba(238, 28, 28, 0.856);
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.1s ease-in-out;
   }
 
   .btn-footer {
@@ -668,21 +754,6 @@ i {
     height: 50px;
     padding: 10px;
     font-size: 1.2rem;
-    border-radius: 8px;
-    background-color: rgba(104, 241, 134, 0.678);
-    cursor: pointer;
-    transition: background-color 0.1s ease-in-out;
-  }
-
-  .btn-vaciar:hover {
-    background-color: rgb(155, 45, 45);
-  }
-  .btn-footer:hover {
-    background-color: rgb(0, 255, 55);
-  }
-
-  .mostarDesplegable {
-    clip-path: var(--mostarDesplegable);
   }
 
   footer {

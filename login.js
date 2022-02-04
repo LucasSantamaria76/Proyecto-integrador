@@ -67,23 +67,6 @@ const enviarLoginRegistro = () => {
       msgDialog("Usuario inexistente");
     }
 
-    /* const usuario = usuarios.filter((el) => el.nombre === $userNombre.value);
-    if (usuario.length) {
-      if (usuario[0].pass === $pass.value) {
-        localStorage.setItem(
-          "UsuarioActivo",
-          JSON.stringify(usuario[0].nombre)
-        );
-        $userNombre.value = "";
-        $pass.value = "";
-        $repetirPass.value = "";
-        location.href = "index.html";
-      } else {
-        msgDialog("Password incorecto");
-      }
-    } else {
-      msgDialog("Usuario inexistente");
-    } */
   };
 
   const registroUsuario = () => {

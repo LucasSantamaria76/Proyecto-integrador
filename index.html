@@ -22,26 +22,12 @@
       <nav class="navbar">
         <div class="logo">Frutas online</div>
         <div class="barraMenu">
-          <input type="checkbox" id="btn-menu" />
-          <label for="btn-menu" id="burger">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              class="bi bi-list"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0  1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-              />
-            </svg>
-          </label>
-          <div class="menu">
-            <a href="#main">Inicio</a>
-            <a href="#productos">Productos</a>
-            <a href="contacto.html">Contacto</a>
-          </div>
+          <ul class="enlaces-menu">
+            <li><a href="#main">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+
           <div class="menuIcons">
             <div id="iconoUser"></div>
             <a href="login.html" id="iconoLogin">
@@ -72,23 +58,31 @@
               </div>
             </a>
           </div>
+
+          <button class="burger" type="button">
+            <span class="br-1"></span>
+            <span class="br-2"></span>
+            <span class="br-3"></span>
+          </button>
         </div>
       </nav>
     </header>
-    <!--         <main id="main">
-       <div class="box-text">
-         <h1>Frutas online</h1>
-         <h3>Venta minorista de frutas y verduras</h3>
-       </div>
-    </main> -->
+    <main id="main">
+      <div class="box-text">
+        <h1>Frutas online</h1>
+        <h3>Venta minorista de frutas y verduras</h3>
+      </div>
+    </main>
     <section id="productos">
-      <select id="select">
-        <option value="Verduras" selected>Verduras</option>
-        <option value="Frutas">Frutas</option>
-      </select>
+      <div class="barra-filtros">
+        <select id="select">
+          <option value="Verduras" selected>Verduras</option>
+          <option value="Frutas">Frutas</option>
+        </select>
+        <input type="search" id="filtro" placeholder="Filtrar productos" />
+      </div>
       <div id="grid-productos" class="grid-fluid"></div>
     </section>
-
     <section class="contenedor-carrito">
       <div class="carrito">
         <h2 class="titulo-carrito">Carrito de compras</h2>
@@ -145,10 +139,20 @@
         <h3 class="totalCarrito">$ <span>total</span></h3>
       </div>
       <div class="footer-linea2">
-       <button class="btn-footer" id="btnContinuar">Continuar comprando</button> 
-       <button class="btn-footer" id="btnComprar">Terminar compra</button> 
+        <button class="btn-footer" id="btnContinuar">
+          Continuar comprando
+        </button>
+        <button class="btn-footer" id="btnComprar">Terminar compra</button>
       </div>
     </template>
+
+    <section class="modal">
+      <div class="modalContainer">
+        <img src="./img/success.svg" class="modalImg" />
+        <h2 class="modalTitle"></h2>
+        <button class="modalClose">Aceptar</button>
+      </div>
+    </section>
     <script src="./app.js" type="module"></script>
   </body>
 </html>
