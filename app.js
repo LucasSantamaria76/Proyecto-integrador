@@ -211,6 +211,11 @@ $select.onchange = (e) => {
   renderProductos();
 };
 
+$filtro.onsearch = (e) => {
+  productos = data[$select.value];
+  renderProductos();
+};
+
 $filtro.onkeyup = (e) => {
   // Filtro la lista de productos
   let res = {};

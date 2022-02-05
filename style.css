@@ -800,7 +800,7 @@ i {
   
   .grid-fluid {
     width: 99%;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
   }
   
   .product-card {
