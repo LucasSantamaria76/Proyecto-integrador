@@ -19,12 +19,15 @@ const $iconoUser = document.getElementById("iconoUser"),
   // Modal
   $showModal = document.querySelector(".modal"),
   $closeModal = document.querySelector(".modalClose"),
+  $modalImg = document.querySelector(".modalImg"),
   $modalTitle = document.querySelector(".modalTitle");
 
 let data, productos, carrito, usuarioActivo, usuariosRegistrados;
 
 // Dialogo para mandar los mensajes
-const msgDialog = (title) => {
+const msgDialog = (title, tipo = "success") => {
+  $modalImg.src =
+    tipo === "success" ? "./img/success.svg" : "./img/information.svg";
   $modalTitle.innerHTML = title;
   $showModal.classList.add("modal-show");
 };
@@ -259,7 +262,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 $closeModal.onclick = (e) => $showModal.classList.remove("modal-show");
 
-$gridProductos.onclick = (e) => addCarrito(e); // capturo el evento de las tarjetas y lo delego a la función
+$gridProductos.onclick = (e) => {
+  // capturo el evento de las tarjetas y lo delego a la función
+  usuarioActivo
+    ? addCarrito(e)
+    : msgDialog(
+        "Debes iniciar sesión <br /> para agregar al carrito",
+        "information"
+      );
+};
 
 $iconoUser.onclick = () => {
   if (confirm("¿Está seguro de cerrar la sesión?")) {
@@ -275,7 +286,6 @@ $iconoCarrito.onclick = (e) => {
 };
 
 $itemsCarrito.onchange = (e) => {
-
   // capturo el evento del input numerico
   if (e.target.dataset.id) {
     const producto = carrito[e.target.dataset.id];
