@@ -118,6 +118,7 @@ const pintarCarrito = () => {
     $templateCarrito.querySelector("input").dataset.id = key;
     $templateCarrito.querySelectorAll("span")[0].textContent =
       carrito[key].precio;
+    $templateCarrito.querySelectorAll("span")[1].dataset.id = key;
     $templateCarrito.querySelectorAll("span")[1].textContent =
       carrito[key].precio * carrito[key].cantidad;
 
@@ -273,19 +274,23 @@ $iconoCarrito.onclick = (e) => {
   carrito && $carritoDesplegable.classList.toggle("mostarDesplegable");
 };
 
-$itemsCarrito.onchange = (e) => { // capturo el evento del input numerico
+$itemsCarrito.onchange = (e) => {
+
+  // capturo el evento del input numerico
   if (e.target.dataset.id) {
     const producto = carrito[e.target.dataset.id];
     producto.cantidad = Number(e.target.value); // le asigno el valor del input a la cantidad del producto
 
-    if (producto.cantidad === 0) { // si la cantidad llega a 0 elimino el producto del carrito
-      delete carrito[e.target.dataset.id];
+    if (producto.cantidad === 0) {
+      delete carrito[e.target.dataset.id]; // si la cantidad llega a 0 elimino el producto del carrito
       pintarCarrito();
-    } else carrito[e.target.dataset.id] = { ...producto };
-
-    pintarFooter();
+    } else {
+      carrito[e.target.dataset.id] = { ...producto }; // asigno la nueva cantidad y recalculo el nuevo subtotal
+      e.path[2].children[4].children[0].textContent =
+        producto.cantidad * producto.precio;
+      pintarFooter();
+    }
   }
-
   e.stopPropagation();
 };
 
