@@ -23,7 +23,7 @@ let usuariosRegistrados = {};
 
 document.addEventListener("DOMContentLoaded", () => {
   $repetirPass.style.display = "none";
-  localStorage.getItem("UsuariosRegistrados") &&
+  localStorage.getItem("UsuariosRegistrados") && // si existen usuarios registrados los almaceno en una variable
     (usuariosRegistrados = JSON.parse(
       localStorage.getItem("UsuariosRegistrados")
     ));
@@ -48,17 +48,17 @@ const loginRegistro = () => {
 };
 
 const enviarLoginRegistro = () => {
-  const loginUsuario = () => {
-    if (usuariosRegistrados.hasOwnProperty($userNombre.value)) {
-      if (usuariosRegistrados[$userNombre.value].pass === $pass.value) {
+  const loginUsuario = () => {  
+    if (usuariosRegistrados.hasOwnProperty($userNombre.value)) {         //  Si el usuario se encuentra registrado 
+      if (usuariosRegistrados[$userNombre.value].pass === $pass.value) { // y el password es correcto el usuario es logueado
         localStorage.setItem(
           "UsuarioActivo",
-          JSON.stringify($userNombre.value)
+          JSON.stringify($userNombre.value) // se guarda el usuario activo en el localStorage
         );
         $userNombre.value = "";
         $pass.value = "";
         $repetirPass.value = "";
-        location.href = "index.html";
+        location.href = "index.html"; // Se vuelve a la pag. principal con el usuario logueado
       } else {
         msgDialog("Password incorecto");
       }
@@ -69,7 +69,7 @@ const enviarLoginRegistro = () => {
 
   const registroUsuario = () => {
     if ($pass.value === $repetirPass.value) {
-      const userId =
+      const userId = // Se genera un id ded usuario
         Object.values(usuariosRegistrados).length !== 0
           ? Object.values(usuariosRegistrados).length + 1
           : 1;
@@ -80,7 +80,7 @@ const enviarLoginRegistro = () => {
         carrito: [],
       };
 
-      if (!usuariosRegistrados.hasOwnProperty($userNombre.value)) {
+      if (!usuariosRegistrados.hasOwnProperty($userNombre.value)) { // Si el usuario no se encuentra ya registrado se registra
         usuariosRegistrados[$userNombre.value] = { ...nuevoUsuario };
         localStorage.removeItem("UsuariosRegistrados");
         localStorage.setItem(
