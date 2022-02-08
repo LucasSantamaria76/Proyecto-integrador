@@ -318,3 +318,5 @@ $burger.onclick = () => {
   });
   $burger.classList.toggle("girar");
 };
+
+window.addEventListener("resize",() => location.href = "#productos");
